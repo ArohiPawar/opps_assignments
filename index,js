@@ -1,0 +1,67 @@
+class Shape {
+  constructor(x, y) {
+    this.setLocation(x, y);
+  }
+  setLocation(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+//Circle
+class Circle extends Shape {
+  constructor(x, y, radius) {
+    super(x, y);
+    this.radius = radius;
+  }
+  getArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+var circle = new Circle(0, 2, 5);
+console.log("Area OF Circle: " + circle.getArea());
+
+// Rectangle
+class Rectangle extends Shape {
+  constructor(x, y,l,w) {
+      super(x, y);
+      this.l = l;
+      this.w = w;
+  }
+  getArea() {
+    return this.l * this.w;
+  }
+}
+
+var rectangle = new Rectangle(0, 0,10,15);
+console.log( "Area OF Rectangle: "+rectangle.getArea() );
+
+//Square
+class Square extends Shape {
+  constructor(x, y,side) {
+      super(x, y);
+      this.side = side;
+  }
+  getArea() {
+    return Math.sqrt(this.side);
+  }
+}
+
+var square = new Square(0, 0,9);
+console.log( "Area OF Square: "+square.getArea() );
+
+//Triangle
+class Triangle extends Shape {
+  constructor(x, y,h,b) {
+      super(x, y);
+      this.h = h;
+      this.b = b;
+  }
+  getArea() {
+    return (1/2) * this.h * this.b;
+  }
+}
+
+var triangle = new Triangle(0, 0,12,20);
+console.log( "Area OF Triangle: "+triangle.getArea() );
